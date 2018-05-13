@@ -79,6 +79,10 @@ public class TimelineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((HeaderHolder) holder).txt_title.setText(txt);
             txt = list.get(position).getDay();
             ((HeaderHolder) holder).txt_subtitle.setText(txt);
+            txt = list.get(position).getTime_str();
+            ((HeaderHolder) holder).txt_time.setText(txt);
+            txt = list.get(position).getDetail();
+            ((HeaderHolder) holder).txt_detail.setText(txt);
         }
     }
 
@@ -98,12 +102,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     static class HeaderHolder extends RecyclerView.ViewHolder {
-        TextView txt_title, txt_subtitle;
+        TextView txt_title, txt_subtitle, txt_time, txt_detail;
         HeaderHolder(View view) {
             super(view);
 
             txt_title = view.findViewById(R.id.txt_title);
             txt_subtitle = view.findViewById(R.id.txt_sub_title);
+            txt_time = view.findViewById(R.id.txt_time);
+            txt_detail = view.findViewById(R.id.txt_detail);
         }
     }
 }
