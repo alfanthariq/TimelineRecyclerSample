@@ -33,7 +33,9 @@ public class TimelineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (position<=0){
             return ITEM_HEADER;
         } else {
-            // Check group by
+            // Here's the tweak
+            // In this case, my data group by date_str. So, compare current date_str with previous date_str
+            // If same, set viewType to ITEM_SECTION
             String date_str = list.get(position).getDate_str();
             String date_str_prev = list.get(position-1).getDate_str();
             if (date_str.equals(date_str_prev)) {
